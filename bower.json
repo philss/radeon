@@ -1,0 +1,22 @@
+{
+  "name": "radeon",
+  "version": "0.0.1",
+  "authors": [
+    "Philip Sampaio <philip.sampaio@gmail.com>"
+  ],
+  "description": "An quase-TODO app",
+  "main": "priv/static/js/main.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "static/external_dependencies",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~0.10.5",
+    "requirejs": "~2.1.14"
+  }
+}
