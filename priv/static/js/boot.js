@@ -1,6 +1,4 @@
 define(function(require) {
-  var hello = require('./hello_world');
-
-  hello.sayHello();
+  var App = require('app/add_task');
 });
 

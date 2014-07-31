@@ -4,6 +4,10 @@ define(['vue', 'text!templates/hello.html'], function(Vue, template) {
     sayHello: function() {
         console.log('hello world!');
         console.log(template);
+    },
+
+    theAnswer: function() {
+      return 42;
     }
   };
 });
