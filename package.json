@@ -1,0 +1,27 @@
+{
+  "name": "radeon",
+  "version": "0.0.1",
+  "description": "An experimental app to test concepts of AMD, and technologies as RequireJS",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "test": "test/javascripts"
+  },
+  "scripts": {
+    "test": "karma run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/philss/radeon.git"
+  },
+  "author": "Philip Sampaio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/philss/radeon/issues"
+  },
+  "homepage": "https://github.com/philss/radeon",
+  "devDependencies": {
+    "karma": "~0.12.19",
+    "karma-jasmine": "^0.2.2"
+  }
+}
