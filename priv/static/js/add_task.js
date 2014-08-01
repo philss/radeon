@@ -1,6 +1,6 @@
-define(['vue', 'underscore', 'text!templates/form.html', 'app/get_random_id'], function(Vue, _, template, getRandomId) {
-  return new Vue({
-    el: '#radeon-container',
+// A task manager
+define(['vue', 'underscore', 'app/get_random_id', 'text!templates/form.html'], function(Vue, _, getRandomId, template) {
+  return Vue.extend({
     template: template,
 
     data: {
