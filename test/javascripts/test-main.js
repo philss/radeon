@@ -26,7 +26,8 @@ require.config({
     templates: 'priv/static/templates',
     vue: 'priv/static/bower_components/vue/dist/vue',
     jquery: 'priv/static/bower_components/jquery/dist/jquery',
-    text: 'priv/static/bower_components/requirejs-text/text'
+    text: 'priv/static/bower_components/requirejs-text/text',
+    underscore: 'priv/static/bower_components/underscore/underscore',
   },
 
   // we have to kickoff jasmine, as it is asynchronous

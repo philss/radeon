@@ -1,5 +1,5 @@
 // A task manager
-define(['vue', 'underscore', 'app/get_random_id', 'text!templates/form.html'], function(Vue, _, getRandomId, template) {
+define(['vue', 'underscore', 'app/get_random_id', 'text!templates/tasks_collection.html'], function(Vue, _, getRandomId, template) {
   return Vue.extend({
     template: template,
 
@@ -16,16 +16,34 @@ define(['vue', 'underscore', 'app/get_random_id', 'text!templates/form.html'], f
 
         this.cards.push({
           title: this.newCard,
-          id: getRandomId()
+          id: getRandomId(),
+          description: ''
         });
 
         this.newCard = '';
       },
 
       removeCard: function(id) {
-        this.cards = _.reject(this.cards, function(card) {
+        this.cards = _.reject(this.cards, this.detectTask(id));
+      },
+
+      openTaskEdition: function(id) {
+        var task = _.detect(this.cards, this.detectTask(id));
+
+        this.$dispatch('open-task-edition', task);
+      },
+
+      updateTask: function(task) {
+        var _task = _.detect(this.cards, this.detectTask(task.id));
+
+        _task.title = task.title;
+        _task.description = task.description;
+      },
+
+      detectTask: function(id) {
+        return function(card) {
           return card.id === id;
-        });
+        };
       }
     }
   });

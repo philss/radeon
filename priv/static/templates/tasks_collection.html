@@ -5,5 +5,5 @@
 </p>
 
 <ul>
-  <li v-repeat="cards">{{title}} <button v-on="click: removeCard(id)">x</button></li>
+  <li v-repeat="cards"> <a href="#" v-on="click: openTaskEdition(id)">{{title}}</a> <button v-on="click: removeCard(id)">x</button></li>
 </ul>
