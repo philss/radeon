@@ -1,0 +1,9 @@
+<p>
+  <label for='new-card'>title: </label>
+  <input type="text" v-on="keyup: addCard | key enter" v-model="newCard" id="new-card" />
+  <button v-on="click: addCard">Add card</button>
+</p>
+
+<ul>
+  <li v-repeat="cards"> <a href="#" v-on="click: openCardEditor(id)">{{title}}</a> <button v-on="click: removeCard(id)">x</button></li>
+</ul>

@@ -1,23 +1,23 @@
-define(['vue', 'app/add_task', 'app/edit_task'], function(Vue, AddTask, EditTask) {
+define(['vue', 'app/card_manager', 'app/card_editor'], function(Vue, CardManager, CardEditor) {
 
   var app = new Vue({
     el: '#radeon-container',
-    template: '<div v-component="add_task" v-ref="taskCollection"></div><div v-component="edit_task" v-ref="edition"></div>',
+    template: '<div v-component="card_manager" v-ref="cardManager"></div><div v-component="card_editor" v-ref="cardEditor"></div>',
     components: {
-      add_task: AddTask,
-      edit_task: EditTask
+      card_manager: CardManager,
+      card_editor: CardEditor
     },
     created: function() {
-      this.$on('open-task-edition', function(task) {
-        var edition = this.$.edition;
+      this.$on('open-card-editor', function(card) {
+        var cardEditor = this.$.cardEditor;
 
-        edition.id = task.id;
-        edition.title = task.title;
-        edition.description = task.description;
+        cardEditor.id = card.id;
+        cardEditor.title = card.title;
+        cardEditor.description = card.description;
       });
 
-      this.$on('updated-task', function(task) {
-        this.$.taskCollection.updateTask(task);
+      this.$on('update-card', function(card) {
+        this.$.cardManager.updateCard(card);
       });
     }
   });
