@@ -1,5 +1,5 @@
 // A task edition manager
-define(['vue', 'underscore', 'text!templates/edition.html'], function(Vue, _, template) {
+define(['text!templates/edition.html'], function(template) {
   return {
     template: template,
 

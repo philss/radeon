@@ -1,10 +1,10 @@
 define(['app/edit_task'], function(EditTask) {
+  'use strict';
 
   describe('EditTask Component', function() {
     describe('methods', function() {
       describe('#updateTask', function() {
-        var subject = EditTask.methods.updateTask,
-            called = false,
+        var updateTask = EditTask.methods.updateTask,
             params = {},
             messageName = '',
             mock = {
@@ -17,9 +17,10 @@ define(['app/edit_task'], function(EditTask) {
               }
             };
 
-        it('dispatches the new changes', function() {
-          // Call subject with the context of mock
-          subject.call(mock);
+        it('dispatches the new changes to the right channel', function() {
+
+          // Call updateTask with the context of mock
+          updateTask.call(mock);
 
           expect(messageName).toBe('updated-task');
 
